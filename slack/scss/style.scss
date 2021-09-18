@@ -3,7 +3,7 @@
 
 //variable color
 $main-color: 6333A0;
-$gray: rgb(230, 230, 230);
+$gray: rgb(243, 243, 243);
 $purple: rgb(62, 4, 101);
 $black: #191818;
 $lighter-black: lighten($black,10%);
@@ -16,21 +16,6 @@ $lighter-black: lighten($black,10%);
     box-sizing: border-box;
     text-decoration: 0;
 }
-// img{
-//     max-width: 50%;
-// }
-
-
-//general semantic adjustment
-h1{
-   
-    font-weight: 900;
-    
-    line-height: 6vh;
-    margin-bottom: 15px;
-}
-
-
 
 
 //header styling
@@ -40,7 +25,6 @@ h1{
     background-color: white;
     height: 80px;
     box-shadow: 0 0 4px rgb(240, 240, 240);
-    
     .logo-field{
         margin: 5px 20px;
         display: flex;
@@ -61,16 +45,20 @@ h1{
         display: flex;
             align-items: center;
             float: right;
-            
+            padding-right: 80px;
         ul{
             display: flex;
             float: right;
             list-style-type: none;
             li{
                 margin: 0 10px;
+                padding: auto;
                 &:hover{
-                
-                  background-color: black;  
+                    cursor: pointer;
+                    color: white;
+                  background-color: $purple;  
+                //   padding: 20px 0;
+                  line-height: 10vh;
                 }
             }
         }
@@ -83,12 +71,15 @@ h1{
 .main-content{
     margin: 0px 100px 0px 100px;
     img{
-        margin-top: -40px;
-        width: 100%;
+        margin-top:20px;
+        max-width: 600px;
+        width: 450px;
+
     }
     .content--section{
-        margin-top: 100px;
-        max-width: 550px;
+        margin-top: 80px;
+        margin-right: 100px;
+        max-width: 450px;
         h1{
             font-size: 60px;
             line-height: 60px;
@@ -111,26 +102,38 @@ h1{
 //footer
 .main-footer{
     background-color: $gray;
-    display: flex;
+    
+    padding: 30px;
+    
+    .footer-label{
+        display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
-    .h1{
-
+        p{
+            text-align: center;
+        }
+        input{
+            border: 2px solid $purple;
+                border-radius: 4px;;
+                background-color: white;
+                padding: 10px 30px;
+                color: $purple;
+                text-decoration: none;
+                font-size: 14px;
+                margin: 15px;
+        }
     }
-    p{
-        
+     
+    .brand-field{
+        display: flex;
+        margin: 0 100px;
     }
-    input{
-        border: 2px solid $purple;
-            border-radius: 4px;;
-            background-color: white;
-            padding: 10px 30px;
-            color: $purple;
-            text-decoration: none;
-            font-size: 14px;
-            margin: 15px;
+    .brand{
+        filter: grayscale(100);
+        width: 200px;
+        margin: 50px 80px;
     }
+    
 }
 
 
@@ -160,12 +163,6 @@ body{
 .main-footer{
     grid-area: footer;
 }
-
-// //flex layout header
-// .main-header{
-//     display: flex;
-//     justify-content: flex-start;
-// }
 
 
 //grid layout header-nav
@@ -198,4 +195,49 @@ body{
     grid-area: section;
 }
 
+
+//media queries for phone
+@media only screen and (max-width: 800px) {
+    //main content
+    .main-content{
+        display: grid;
+        grid-template-areas: 
+        "section"
+        "img"  ;
+        
+    }
+    .content--img{
+        grid-area: img;
+    }
+    
+    .content--section{
+        grid-area: section;
+    }
+    
+    //grid layout header-nav
+    .main-header{
+        display: grid;
+        grid-template-areas: 
+        "logo" ;
+    }
+    .header-nav{
+        display: none !important;
+    }
+
+    .logo-field{
+        grid-area: logo;
+    }
+
+    .header-nav{
+        grid-area: nav;
+    }
+
+    .brand-field{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    
+}
 
