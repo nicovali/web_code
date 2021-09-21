@@ -1,0 +1,59 @@
+@import 'grid-layout';
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.main-header{
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.logo{
+    width: 100px;
+    padding: 20px;
+}
+
+ul{
+    display:flex;
+    li{
+        list-style-type: none;
+        padding: 20px;
+        &:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+}
+
+
+.content--header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    h1{
+        font-size: 40px;
+        padding-bottom: 10px;
+        text-align: centerI;
+    }
+    p{
+        text-align: center;
+    }
+}
+
+.main-section--img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+

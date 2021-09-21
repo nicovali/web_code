@@ -1,0 +1,40 @@
+//main grid layout
+.main-content{
+    display: grid;
+    grid-template-areas: 
+    "mainhead" 
+    "mainsection";
+}
+
+.content--header{
+    grid-area: mainhead;
+
+}
+
+.main-section{
+    grid-area: mainsection;
+}
+
+//header grit layout
+.main-header{
+    display: grid;
+    grid-template-columns: min-content auto max-content;
+    grid-template-areas: "logo . nav";
+}
+
+.logo{
+    grid-area: logo;
+}
+
+.main-nav{
+    grid-area: nav;
+}
+
+//main grid img layout
+.main-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 20vw);
+    grid-gap: 8px;
+    padding: 20px;
+}
